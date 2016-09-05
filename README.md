@@ -77,11 +77,11 @@ so 4 button will shows and a music play window shows.
 
 ####Logic
 ```
-														 ________________________________
-														|																 |
-														v																 |
-set up time and music  ->  break 	-> continue	__________		 |
-																	-> record note________|		 |
-																	-> change interval____|____|
-																	-> change music_______|
+															__________________________________
+															|																 |
+															v																 |
+set up time and music		->  break 	-> continue	__________		 |
+																		-> record note________|		 |
+																		-> change interval____|____|
+																		-> change music_______|
 ```

@@ -75,10 +75,13 @@ so 4 button will shows and a music play window shows.
 *music choose							->	Dir Button
 *save setting							->	Button
 
-####Logic										 ________________________________
+####Logic
+```
+														 ________________________________
 														|																 |
 														v																 |
 set up time and music  ->  break 	-> continue	__________		 |
 																	-> record note________|		 |
 																	-> change interval____|____|
 																	-> change music_______|
+```

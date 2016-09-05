@@ -1,5 +1,6 @@
 #Logger System
-
+##initial time: 2016.9.5
+##author: frankGao
 Project objective: Build a log system to promote the working efficiency.
 
 Project basic idea: Break the working schedule into time intervals. At the end of each time interval, a windows jumps out and music play. User need to record what he or she did in the previous time intervals. The program will automatic record the information.

@@ -1,7 +1,7 @@
 #Logger System
-##initial time: 2016.9.5
-##author: frankGao
-### inspried by Udacity's python course. But I need a more customized program for self-using.
+####initial time: 2016.9.5
+####author: frankGao
+#### inspried by Udacity's python course. But I need a more customized program for self-using.
 **Project objective:** Build a log system to promote the working efficiency.
 
 **Project basic idea:** Break the working schedule into time intervals. At the end of each time interval, a window jumps out and music plays. User need to record what he or she did in the previous time intervals. The program will automatic record the information into log, which is represented as text file named by the current date.
@@ -19,12 +19,14 @@ In brief, the program will work as following steps:
 Then each time the window jumps out. User need to record what he or she has done in the prevous passed intervel. The program will write those into the log.
 
 Language intended to use to implement: Java
+
 Music format: MP3
+
 Log format: text file
 
-###Design notes:
+##Design notes:
 
-####Use cases
+###Use cases
 
 1. at the beginning of the program, a setting up window shows to set up three parameters:
 *interval length
@@ -42,7 +44,7 @@ Log format: text file
 
 so 4 button will shows and a music play window shows.
 
-#####Setting up window
+####Setting up window
 
 1. one text field for setting how long the interval should be
 
@@ -50,7 +52,7 @@ so 4 button will shows and a music play window shows.
 
 3. one test field for list today's goal.
 
-#####Remindering window
+####Remindering window
 
 * Continue work  					->	Button
 
@@ -60,12 +62,12 @@ so 4 button will shows and a music play window shows.
 
 * modify music						->	Button
 
-######Record Work Progress
+#####Record Work Progress
 
 *Progress text						->	Text Field
 *Save											->	Button
 
-######Modify interval
+#####Modify interval
 
 *interval length setting	->	Text Field
 *save setting							->	Button
@@ -77,11 +79,11 @@ so 4 button will shows and a music play window shows.
 
 ####Logic
 ```
-															__________________________________
-															|																 |
-															v																 |
-set up time and music		->  break 	-> continue	__________		 |
-																		-> record note________|		 |
-																		-> change interval____|____|
-																		-> change music_______|
+													__________________________________
+													|																 |
+													v																 |
+set up time and music -> break  -> continue	__________		 |
+																-> record note________|		 |
+																-> change interval____|____|
+																-> change music_______|
 ```

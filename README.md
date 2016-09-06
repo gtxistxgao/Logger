@@ -92,3 +92,9 @@ so 4 button will shows and a music play window shows.
 first time to implement a swing GUI program. not very familiar with it. Spend some time do the initial learning. Get the first window as follow
 
 ![enter image description here](https://raw.githubusercontent.com/PosFrank/Logger/master/2016.9.5.png)
+
+useful resources:
+[A Visual Guide to Swing](http://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html)
+
+this guy make some easy tutorials:
+[enter link description here](https://www.youtube.com/user/Creativitytuts/playlists)

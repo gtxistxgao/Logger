@@ -90,4 +90,4 @@ set up time and music -> break  -> continue	__________		 |
 
 ##progress: 2016.9.5
 first time to implement a swing GUI program. not very familiar with it. Spend some time do the initial learning. Get the first window as follow:
-![Alt Text]("2016.9.5.png")
+![Alt Text]("https://github.com/PosFrank/Logger/blob/master/2016.9.5.png")

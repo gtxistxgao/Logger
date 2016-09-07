@@ -89,6 +89,21 @@ so 4 button will shows and a music play window shows.
 		-> change interval
 		-> change music
 ```
+##progress: 2016.9.7
+
+By using windowbuilder, things getting easier to organize those componenets.
+
+![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182700.png?raw=true)
+
+![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182728.png?raw=true)
+
+we can also do a test play.
+
+![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182802.png?raw=true)
+
+Problems need to be shoot:
+1. music need to play on seperate thread, so that I can kill it during playing.
+2. that's all for now.
 
 ##progress: 2016.9.5
 first time to implement a swing GUI program. not very familiar with it. Spend some time do the initial learning. Get the first window as follow

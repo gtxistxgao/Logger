@@ -2,6 +2,7 @@
 #Logger System
 ####initial time: 2016.9.5
 ####author: frankGao
+####co-author: lukeiscoding
 #####special thanks to lukeiscoding for suggesting windowbuilder, which saved my life from coding the frame.
 #### inspried by Udacity's python course. But I need a more customized program for self-using.
 **Project objective:** Build a log system to promote the working efficiency.

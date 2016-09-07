@@ -48,6 +48,11 @@ public class Logger {
 		settingUpWindow.add(dailyGoalTextArea, BorderLayout.EAST);
 		
 		//set all components as visible.
+		saveAndStartButton.setVisible(true);
+		openSong.setVisible(true);
+		songName.setVisible(true);
+		howLongTheIntervalWillbe.setVisible(true);
+		intervalLength.setVisible(true);
 		leftPanel.setVisible(true);
 		dailyGoalTextArea.setVisible(true);
 		saveAndStartButton.setVisible(true);

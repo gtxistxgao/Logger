@@ -14,9 +14,7 @@ class MusicPlayTest {
 			try{
 				Player player = new Player(bis);
 				player.play();
-				if(player.isComplete()){
-					player.close();
-				}
+				player.close();
 			}catch(JavaLayerException e){
 				e.printStackTrace();
 			}

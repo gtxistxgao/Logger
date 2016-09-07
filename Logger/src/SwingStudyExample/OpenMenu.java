@@ -27,7 +27,6 @@ public class OpenMenu extends JFrame implements ActionListener {
 
 		add(mb);
 		add(ta);
-
 	}
 
 	public void actionPerformed(ActionEvent e) {

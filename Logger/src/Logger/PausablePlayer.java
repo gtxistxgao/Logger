@@ -1,4 +1,4 @@
-package MultiThreadingLearning;
+package Logger;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.AudioDevice;
 import javazoom.jl.player.Player;
 
-public class PausablePlayer {
+class PausablePlayer {
 
     private final static int NOTSTARTED = 0;
     private final static int PLAYING = 1;
@@ -23,18 +23,18 @@ public class PausablePlayer {
     // status variable what player thread is doing/supposed to do
     private int playerStatus = NOTSTARTED;
 
-    public PausablePlayer(final InputStream inputStream) throws JavaLayerException {
+    PausablePlayer(final InputStream inputStream) throws JavaLayerException {
         this.player = new Player(inputStream);
     }
 
-    public PausablePlayer(final InputStream inputStream, final AudioDevice audioDevice) throws JavaLayerException {
+    PausablePlayer(final InputStream inputStream, final AudioDevice audioDevice) throws JavaLayerException {
         this.player = new Player(inputStream, audioDevice);
     }
 
     /**
      * Starts playback (resumes if paused)
      */
-    public void play() throws JavaLayerException {
+    void play() throws JavaLayerException {
         synchronized (playerLock) {
             switch (playerStatus) {
                 case NOTSTARTED:
@@ -57,13 +57,11 @@ public class PausablePlayer {
             }
         }
     }
-    public int getStatus(){
-    	return playerStatus;
-    }
+
     /**
      * Pauses playback. Returns true if new state is PAUSED.
      */
-    public boolean pause() {
+    boolean pause() {
         synchronized (playerLock) {
             if (playerStatus == PLAYING) {
                 playerStatus = PAUSED;
@@ -75,7 +73,7 @@ public class PausablePlayer {
     /**
      * Resumes playback. Returns true if the new state is PLAYING.
      */
-    public boolean resume() {
+    boolean resume() {
         synchronized (playerLock) {
             if (playerStatus == PAUSED) {
                 playerStatus = PLAYING;
@@ -88,7 +86,7 @@ public class PausablePlayer {
     /**
      * Stops playback. If not playing, does nothing
      */
-    public void stop() {
+    void stop() {
         synchronized (playerLock) {
             playerStatus = FINISHED;
             playerLock.notifyAll();
@@ -122,7 +120,7 @@ public class PausablePlayer {
     /**
      * Closes the player, regardless of current state.
      */
-    public void close() {
+    void close() {
         synchronized (playerLock) {
             playerStatus = FINISHED;
         }
@@ -149,6 +147,9 @@ public class PausablePlayer {
             // after 5 secs, resume
             Thread.sleep(5000);
             player.resume();
+            // after 5 secs, stop
+            Thread.sleep(5000);
+            player.close();
         } catch (final Exception e) {
             throw new RuntimeException(e);
         }

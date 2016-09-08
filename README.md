@@ -89,17 +89,31 @@ so 4 button will shows and a music play window shows.
 		-> change interval
 		-> change music
 ```
+##progress: 2016.9.7 Midnight
+
+Thanks to http://stackoverflow.com/questions/12057214/jlayer-pause-and-resume-song
+
+this guy killed the thread then resume the music from some points later. But it seems not a big deal to my project. Let first make the wheel running. This one works, so I took it. Thanks.
+
+Follow is the new Main window:
+
+
+![main window2](ProgressPics/9.7/Main.png)
+
+![main window2](ProgressPics/9.7/20160908001052.png)
+
+![Pause and Resume](ProgressPics/9.7/20160908001127.png)
+
 ##progress: 2016.9.7
 
 By using windowbuilder, things getting easier to organize those componenets.
 
-![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182700.png?raw=true)
+![main window2](ProgressPics/9.7/20160907182700.png)
 
-![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182728.png?raw=true)
 
 we can also do a test play.
 
-![main window2](https://github.com/PosFrank/Logger/blob/master/20160907182802.png?raw=true)
+![main window2](ProgressPics/9.7/20160907182802.png)
 
 Problems need to be shoot:
 1. music need to play on seperate thread, so that I can kill it during playing.
@@ -108,7 +122,7 @@ Problems need to be shoot:
 ##progress: 2016.9.5
 first time to implement a swing GUI program. not very familiar with it. Spend some time do the initial learning. Get the first window as follow
 
-![enter image description here](https://raw.githubusercontent.com/PosFrank/Logger/master/2016.9.5.png)
+![enter image description here](ProgressPics/9.5/2016.9.5.png)
 
 useful resources:
 [A Visual Guide to Swing](http://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html)

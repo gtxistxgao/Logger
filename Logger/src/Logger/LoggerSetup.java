@@ -28,6 +28,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
@@ -35,6 +36,8 @@ import javax.swing.JTextArea;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JSeparator;
+import java.awt.GridLayout;
+import javax.swing.SwingConstants;
 
 public class LoggerSetup extends JFrame {
 
@@ -46,9 +49,14 @@ public class LoggerSetup extends JFrame {
 	private JButton btnOkNowStart;
 	private JTextArea txtrTodaysGoal;
 	private File music;
-	private AdvancedPlayer player;
 	private FileInputStream fis;
 	private BufferedInputStream bis;
+	private PausablePlayer player;
+	private boolean isPause = false;
+	private JButton btnPlay;
+	private JButton btnPause;
+	private JButton btnStop;
+
 	/**
 	 * Launch the application.
 	 */
@@ -71,28 +79,43 @@ public class LoggerSetup extends JFrame {
 	 */
 	public LoggerSetup() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1357, 824);
+		setBounds(100, 100, 1314, 829);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		lblHowLongThe = new JLabel("How long the time interval need to be?");
-		lblHowLongThe.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		txtrTodaysGoal = new JTextArea();
+		txtrTodaysGoal.setBounds(34, 35, 707, 696);
+		txtrTodaysGoal.setText("Today's Goal");
+		txtrTodaysGoal.setFont(new Font("Monospaced", Font.PLAIN, 25));
+
+		lblHowLongThe = new JLabel("Work Interval length (mins)");
+		lblHowLongThe.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHowLongThe.setBounds(789, 114, 377, 49);
+		lblHowLongThe.setFont(new Font("Tahoma", Font.PLAIN, 25));
 
 		textField = new JTextField();
+		textField.setBounds(1201, 113, 63, 50);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		textField.setColumns(5);
 
-		lblChooseMusicFile = new JLabel("Choose Music File");
-		lblChooseMusicFile.setFont(new Font("Tahoma", Font.PLAIN, 30));
+
+		lblChooseMusicFile = new JLabel("Click Button To Choose Music File");
+		lblChooseMusicFile.setHorizontalAlignment(SwingConstants.CENTER);
+		lblChooseMusicFile.setBounds(789, 230, 458, 76);
+		lblChooseMusicFile.setFont(new Font("Tahoma", Font.PLAIN, 25));
 
 		btnChooseMusic = new JButton("Choose Music File");
+		btnChooseMusic.setBounds(789, 350, 458, 64);
 		btnChooseMusic.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fc = new JFileChooser();
 				fc.setDialogTitle("Choose Your Music");
 				fc.setFont(new Font("Monospaced", Font.PLAIN, 25));
-				int i = fc.showOpenDialog(lblChooseMusicFile);
+				fc.setBounds(100, 100, 1314, 829);
+				fc.setMultiSelectionEnabled(false);
+				fc.setCurrentDirectory(new File("A:\\Music\\"));
+				int i = fc.showOpenDialog(contentPane);
 				if (i == JFileChooser.APPROVE_OPTION) {
 					music = fc.getSelectedFile();
 					String fileName = music.getName();
@@ -102,78 +125,66 @@ public class LoggerSetup extends JFrame {
 		});
 		btnChooseMusic.setFont(new Font("Tahoma", Font.PLAIN, 30));
 
-		txtrTodaysGoal = new JTextArea();
-		txtrTodaysGoal.setText("Today's Goal");
-		txtrTodaysGoal.setFont(new Font("Monospaced", Font.PLAIN, 25));
-
-		btnOkNowStart = new JButton("OK! Now Start Working!");
-		btnOkNowStart.setFont(new Font("Tahoma", Font.PLAIN, 30));
-
-		JButton btnPlaytest = new JButton("PlayTest");
-		btnPlaytest.addActionListener(new ActionListener() {
+		btnPlay = new JButton("Play");
+		btnPlay.setBounds(789, 457, 120, 86);
+		btnPlay.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setupMusicPlayer();
-				play();
+				musicPlay();
 			}
 		});
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-				.createSequentialGroup().addGap(29)
-				.addComponent(txtrTodaysGoal, GroupLayout.PREFERRED_SIZE, 617, GroupLayout.PREFERRED_SIZE)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane
-								.createSequentialGroup().addGap(111).addGroup(gl_contentPane
-										.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(btnChooseMusic, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(btnOkNowStart, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 381,
-												Short.MAX_VALUE)
-										.addComponent(lblChooseMusicFile, Alignment.LEADING, GroupLayout.PREFERRED_SIZE,
-												381, GroupLayout.PREFERRED_SIZE))
-								.addGap(68).addComponent(btnPlaytest))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(56)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(textField, GroupLayout.PREFERRED_SIZE, 564,
-												GroupLayout.PREFERRED_SIZE)
-										.addComponent(lblHowLongThe))))
-				.addContainerGap(1037, Short.MAX_VALUE)));
-		gl_contentPane
-				.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(30)
-								.addComponent(txtrTodaysGoal, GroupLayout.PREFERRED_SIZE, 696,
-										GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(32, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(133).addComponent(lblHowLongThe)
-								.addGap(50)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-								.addGap(57).addComponent(lblChooseMusicFile).addGap(61)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(btnPlaytest, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-												Short.MAX_VALUE)
-										.addComponent(btnChooseMusic, GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
-								.addPreferredGap(ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-								.addComponent(btnOkNowStart, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-								.addGap(67)));
-		contentPane.setLayout(gl_contentPane);
+
+		btnPause = new JButton("Pause");
+		btnPause.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnPause.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				musicPause();
+			}
+		});
+		btnPause.setBounds(965, 457, 120, 86);
+		contentPane.add(btnPause);
+		
+		btnStop = new JButton("Stop");
+		btnStop.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				musicStop();
+			}
+		});
+		btnStop.setBounds(1127, 457, 120, 86);
+		contentPane.add(btnStop);
+		
+		
+		btnOkNowStart = new JButton("OK! Now Start Working!");
+		btnOkNowStart.setBounds(789, 628, 458, 103);
+		btnOkNowStart.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		contentPane.setLayout(null);
+		contentPane.add(txtrTodaysGoal);
+		contentPane.add(btnPlay);
+		contentPane.add(lblChooseMusicFile);
+		contentPane.add(lblHowLongThe);
+		contentPane.add(btnChooseMusic);
+		contentPane.add(textField);
+		contentPane.add(btnOkNowStart);
 	}
-	
-	void setupMusicPlayer(){
-		try{
-			this.music = music;
+
+	void setupMusicPlayer() {
+		try {
 			fis = new FileInputStream(this.music);
 			bis = new BufferedInputStream(fis);
-			try{
-				player = new AdvancedPlayer(bis);
-			}catch(JavaLayerException e){
-				e.printStackTrace();
-				System.out.println("Failed to play the file.");
-			}
-		}catch(IOException e){
+			player = new PausablePlayer(bis);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("Not Found Music File!");
+			e1.printStackTrace();
+		} catch (JavaLayerException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	void play(){
+
+	void musicPlay() {
 		try {
 			player.play();
 		} catch (JavaLayerException e) {
@@ -181,8 +192,20 @@ public class LoggerSetup extends JFrame {
 			e.printStackTrace();
 		}
 	}
-	
-	void stop(){
-		player.close();
+
+	void musicPause() {
+		if(this.isPause){
+			player.resume();
+			this.isPause = false;
+			btnPause.setText("Pause");
+		}else{
+			player.pause();
+			btnPause.setText("Resume");
+			this.isPause = true;
+		}
+	}
+
+	void musicStop() {
+		player.stop();
 	}
 }

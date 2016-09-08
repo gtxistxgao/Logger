@@ -33,7 +33,9 @@ Log format: text file
 
 1. at the beginning of the program, a setting up window shows to set up three parameters:
 *interval length
+
 *music file
+
 *today's work objective
 
 2. begin from the start of the program, remindering window will jump out at the end of each time intervals.
@@ -41,8 +43,11 @@ Log format: text file
 3. each remindering window give 4 options:
 
 *continue work
+
 *record work progress.
+
 *change interval length
+
 *change music
 
 so 4 button will shows and a music play window shows.
@@ -68,16 +73,19 @@ so 4 button will shows and a music play window shows.
 #####Record Work Progress
 
 *Progress text						->	Text Field
+
 *Save											->	Button
 
 #####Modify interval
 
 *interval length setting	->	Text Field
+
 *save setting							->	Button
 
 ######Modify Music
 
 *music choose							->	Dir Button
+
 *save setting							->	Button
 
 ####Logic

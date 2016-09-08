@@ -2,7 +2,6 @@
 #Logger System
 ####initial time: 2016.9.5
 ####author: frankGao
-####co-author: lukeiscoding
 #####special thanks to lukeiscoding for suggesting windowbuilder, which saved my life from coding the frame.
 #### inspried by Udacity's python course. But I need a more customized program for self-using.
 **Project objective:** Build a log system to promote the working efficiency.
@@ -106,11 +105,15 @@ this guy killed the thread then resume the music from some points later than the
 Following is the new Main window:
 
 This one looks decent.
+
 ![main window2](ProgressPics/9.7/Main.png)
 
 click choose music file, then this dialoge jumps out.
+
 ![main window2](ProgressPics/9.7/20160908001052.png)
+
 we can use the three button to test play the music, to decide if we want them.
+
 ![Pause and Resume](ProgressPics/9.7/20160908001127.png)
 
 ##progress: 2016.9.7

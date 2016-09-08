@@ -93,15 +93,16 @@ so 4 button will shows and a music play window shows.
 
 Thanks to http://stackoverflow.com/questions/12057214/jlayer-pause-and-resume-song
 
-this guy killed the thread then resume the music from some points later. But it seems not a big deal to my project. Let first make the wheel running. This one works, so I took it. Thanks.
+this guy killed the thread then resume the music from some points later than the pause point. But it's not a big deal to my project. Let's make the wheel running first. This one works, so I took it. Thanks.
 
-Follow is the new Main window:
+Following is the new Main window:
 
-
+This one looks decent.
 ![main window2](ProgressPics/9.7/Main.png)
 
+click choose music file, then this dialoge jumps out.
 ![main window2](ProgressPics/9.7/20160908001052.png)
-
+we can use the three button to test play the music, to decide if we want them.
 ![Pause and Resume](ProgressPics/9.7/20160908001127.png)
 
 ##progress: 2016.9.7

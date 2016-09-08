@@ -42,13 +42,13 @@ Log format: text file
 
 3. each remindering window give 4 options:
 
-*continue work
+* continue work
 
-*record work progress.
+* record work progress.
 
-*change interval length
+* change interval length
 
-*change music
+* change music
 
 so 4 button will shows and a music play window shows.
 
@@ -72,21 +72,21 @@ so 4 button will shows and a music play window shows.
 
 #####Record Work Progress
 
-*Progress text						->	Text Field
+* Progress text						->	Text Field
 
-*Save											->	Button
+* Save											->	Button
 
 #####Modify interval
 
-*interval length setting	->	Text Field
+* interval length setting	->	Text Field
 
-*save setting							->	Button
+* save setting							->	Button
 
 ######Modify Music
 
-*music choose							->	Dir Button
+* music choose							->	Dir Button
 
-*save setting							->	Button
+* save setting							->	Button
 
 ####Logic
 ```

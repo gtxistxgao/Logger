@@ -76,11 +76,11 @@ you can do three thing on this window:
 
 	1. take note what you have done
 	
-	![window](ProgressPics/9.9/20160910013853.png)
+![window](ProgressPics/9.9/20160910013853.png)
 	
 	2. change to another the music file to play (mp3 format)
 	
-	![window](ProgressPics/9.9/20160910013907.png)
+![window](ProgressPics/9.9/20160910013907.png)
 	
 	3. change the the length of time interval.
 

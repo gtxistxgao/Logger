@@ -45,10 +45,25 @@ public class Logger extends JFrame {
 	private JButton btnPlay;
 	private JButton btnPause;
 	private JButton btnStop;
-	
-
 	private JPanel remindPane;
-
+	/**
+	 * @description: Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+						Logger frame = new Logger();
+						frame.setLocationRelativeTo(null);
+						frame.setVisible(true);
+						int length = frame.getIntervalLength();
+						System.out.println(length);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 	/**
 	 * 
 	 * @description: Create the frame.
@@ -59,10 +74,10 @@ public class Logger extends JFrame {
 		setBounds(100, 100, 1314, 829);
 		setupPaneInitialize();
 		setContentPane(setupPane);
-		setupPane.setVisible(false);
-		remindPane = new JPanel();
-		remindPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(remindPane);
+//		setupPane.setVisible(false);
+//		remindPane = new JPanel();
+//		remindPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		setContentPane(remindPane);
 	}
 
 	/**

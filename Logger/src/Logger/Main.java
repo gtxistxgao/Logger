@@ -3,25 +3,8 @@ package Logger;
 import java.awt.EventQueue;
 
 public class Main {
-	/**
-	 * @description: Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 
-			public void run() {
-				try {
-						Logger frame = new Logger();
-						frame.setLocationRelativeTo(null);
-						frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 }
-
 
 /*
  * open program:

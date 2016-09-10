@@ -56,6 +56,12 @@ Ames, Iowa.
 		
 ##How to use it?
 
+Download foler: RunnableJarFile
+
+https://github.com/PosFrank/Logger/tree/master/RunnableJarFile
+
+double click logger.jar file.
+
 ![window](ProgressPics/9.9/20160910014513.png)
 
 First window: 
@@ -87,6 +93,8 @@ you can do three thing on this window:
 ![window](ProgressPics/9.9/20160910013942.png)
 		
 The program will automatically record the progress in the "notes" folder. Each day, the program will only generate one record file.
+
+Close the program: Any time the window shows up, click the X button on the right-top window.
 
 Enjoy~
 

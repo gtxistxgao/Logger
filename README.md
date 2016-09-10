@@ -56,9 +56,11 @@ Ames, Iowa.
 		
 ##How to use it?
 
-Download foler: RunnableJarFile
+Download: RunnableJarFile.zip
 
-https://github.com/PosFrank/Logger/tree/master/RunnableJarFile
+https://github.com/PosFrank/Logger/tree/master/RunnableJarFile.zip
+
+upzip the file and click into the folder.
 
 double click logger.jar file.
 

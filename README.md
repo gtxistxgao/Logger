@@ -58,7 +58,7 @@ Ames, Iowa.
 
 Download: RunnableJarFile.zip
 
-https://github.com/PosFrank/Logger/tree/master/RunnableJarFile.zip
+https://github.com/PosFrank/Logger/blob/master/RunnableJarFile.zip
 
 upzip the file and click into the folder.
 

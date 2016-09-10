@@ -1,12 +1,20 @@
+# Logger System
 
-#Logger System
-####initial time: 2016.9.5
-####author: Tianxiang Gao
-#####special thanks to lukeiscoding for suggesting windowbuilder, which saved my life from coding the frame.
-#### inspried by Udacity's python course. But I need a more customized program for self-using.
-**Project objective:** Build a log system to promote the working efficiency.
+### Initiation time: 2016.9.5
 
-**Project basic idea:** Break the working schedule into time intervals. At the end of each time interval, a window jumps out and music plays. User need to record what he or she did in the previous time intervals. The program will automatic record the information into log, which is represented as text file named by the current date.
+### Author: Tianxiang Gao
+
+##### special thanks to lukeiscoding for suggesting windowbuilder, which saved my life from coding the frame.
+
+##### inspried by Udacity's python course. But I need a more customized program for self-using.
+
+### Project objective
+
+Build a log system to promote the working efficiency.
+
+### Project basic idea
+
+Break the working schedule into time intervals. At the end of each time interval, a window jumps out and music plays. User need to record what he or she did in the previous time intervals. The program will automatic record the information into log, which is represented as text file named by the current date.
 
 In brief, the program will work as following steps:
 

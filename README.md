@@ -182,7 +182,7 @@ so 4 buttons will shows and a music play window shows.
 
 Thanks to http://stackoverflow.com/questions/12057214/jlayer-pause-and-resume-song
 
-This guy killed the thread then resume the music from some points later than the pause point. But it's not a big deal to my project. Let's make the wheel running first. This one works, so I took it. Thanks.
+Music resume problem resoloved.
 
 Following is the new Main window:
 
